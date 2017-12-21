@@ -134,10 +134,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandHelper.cs" />
-    <Compile Include="Commands\AsciiArt.cs" />
-    <Compile Include="Commands\ICommand.cs" />
-    <Compile Include="Commands\RandomCat.cs" />
     <Compile Include="BotMain.cs" />
+    <Compile Include="Commands\AsciiArt.cs" />
+    <Compile Include="Commands\Cat.cs" />
+    <Compile Include="Commands\Emoticons.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -151,6 +151,9 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Files\Ascii\ascii1.txt" />
+    <Content Include="Files\Ascii\ascii2.txt" />
+    <Content Include="Files\Ascii\ascii4.txt" />
+    <Content Include="Files\Ascii\ascii3.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

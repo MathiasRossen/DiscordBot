@@ -3,33 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Net;
+using Discord.Commands;
 using System.Net.Http;
 using System.Net.Http.Headers;
 
 namespace DiscordBot.Commands
 {
-    class RandomCat : ICommand
+    class Cat : ModuleBase<SocketCommandContext>
     {
         HttpClient client;
 
-        public string Name { get; private set; }
-
-        public RandomCat(string name)
+        public Cat()
         {
-            Name = name;
             client = new HttpClient();
             client.BaseAddress = new Uri("http://random.cat:80/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public RandomCat()
-            : this("cat")
-        {
-        }
-
-        public async Task<string> GetRandomCat()
+        [Command("cat")]
+        public async Task CatAsync()
         {
             string catUrl = "Meow";
 
@@ -37,7 +30,7 @@ namespace DiscordBot.Commands
             if (response.IsSuccessStatusCode)
                 catUrl = await response.Content.ReadAsStringAsync();
 
-            return catUrl.Substring(9, catUrl.Length - 11).Replace("\\", string.Empty);
+            await ReplyAsync(catUrl.Substring(9, catUrl.Length - 11).Replace("\\", string.Empty));
         }
     }
 }
