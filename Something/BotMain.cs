@@ -26,7 +26,7 @@ namespace DiscordBot
             client.Log += Log;
             client.MessageReceived += HandleMessages;
 
-            string token = ConfigurationManager.AppSettings.Get("token");
+            string token = ConfigurationManager.AppSettings.Get("DiscordToken");
             await client.LoginAsync(TokenType.Bot, token);
             await client.StartAsync();
 
