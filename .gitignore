@@ -262,3 +262,6 @@ __pycache__/
 
 # Custom ignore rules
 App.config
+Files/*
+# Files/Assbringers/*
+/Something/Files/Ascii/ascii1.txt
