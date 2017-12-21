@@ -45,12 +45,18 @@ namespace DiscordBot
             switch (message.Content.ToLower())
             {
                 case "!ping":
+                    await message.Channel.TriggerTypingAsync();
                     await message.Channel.SendMessageAsync("Pong");
                     break;
 
                 case "!cat":
                     await message.Channel.TriggerTypingAsync();
                     await message.Channel.SendMessageAsync(await commandHelper.GetRandomCatCommand().GetRandomCat());
+                    break;
+
+                case "!ascii":
+                    await message.Channel.TriggerTypingAsync();
+                    await message.Channel.SendMessageAsync(commandHelper.GetAsciiArtCommand().GetAsciiArt());
                     break;
             }
         }

@@ -134,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandHelper.cs" />
+    <Compile Include="Commands\AsciiArt.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\RandomCat.cs" />
     <Compile Include="BotMain.cs" />

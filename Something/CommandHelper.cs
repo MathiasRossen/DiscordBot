@@ -13,13 +13,21 @@ namespace DiscordBot
 
         public CommandHelper()
         {
-            commandCollection = new List<ICommand>();
-            commandCollection.Add(new RandomCat());
+            commandCollection = new List<ICommand>
+            {
+                new RandomCat(),
+                new AsciiArt()
+            };
         }
 
         public RandomCat GetRandomCatCommand()
         {
             return commandCollection.Find(x => x.Name == "cat") as RandomCat;
+        }
+
+        public AsciiArt GetAsciiArtCommand()
+        {
+            return commandCollection.Find(x => x.Name == "asciiArt") as AsciiArt;
         }
     }
 }
